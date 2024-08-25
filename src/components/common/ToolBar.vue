@@ -34,5 +34,6 @@
         
     .block-note-row-line span{
         padding-left: 10px;
+        padding-right: 10px;
     }
 </style>
