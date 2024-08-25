@@ -1,14 +1,11 @@
 <script setup>
-
+  import ToolBar  from './components/common/ToolBar.vue';
 </script>
 
 <template>
-  <header>
-jkghhg
-  </header>
-
-  <main>
-  </main>
+  <div>
+    <ToolBar/>
+  </div>
 </template>
 
 <style scoped>
