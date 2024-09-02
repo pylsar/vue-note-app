@@ -6,6 +6,7 @@
 </script>
 <template>
     <div>
+        <ListItem :notes="noteStore.pinnedNotes" :title="`Pinned Notes`" :type="`list`"/>
         <ListItem :notes="noteStore.allNotes" :title="`all Notes`" :type="`list`"/>
     </div>
 </template>
