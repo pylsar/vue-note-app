@@ -4,20 +4,23 @@
 </script>
 
 <template>
-  <div>
-    <ToolBar/>
-  </div>
-  <div class="list-view">
-    <ListView />
+  <div class="main-wrapper">
+    <div class="toolbar-view">
+      <ToolBar/>
+    </div>
+    <div class="list-view">
+      <ListView />
+    </div>
   </div>
 </template>
 
 <style scoped>
 
-.list-view{
+
+/* .list-view{
   width: 30%;
-  background: lime;
+  background: orange;
   min-width: 300px;
   height: calc(100vh - 50px);
-}
+} */
 </style>
