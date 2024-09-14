@@ -14,6 +14,7 @@
             <span>{{note.title}}</span>
             <span v-if="!note.pinned" @click="noteStore.markedAsPinned( note.id)">Зафиксировать</span>
             <span v-if="note.pinned" @click="noteStore.markedAsUnpinned( note.id)">Отменить</span>
+            <span  @click="noteStore.deleteNote(note.id)">Удалить</span>
         </li>
         
     </ul>

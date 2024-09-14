@@ -25,6 +25,11 @@ export const useNoteStore = defineStore('noteStore', {
             const newNoteArr = [note, ...this.notes];
             this.notes = newNoteArr;
         },
+        deleteNote(id){
+            this.notes = this.notes.filter(item =>{
+                return item.id !== id;
+            });
+        },
         markedAsPinned(id){
             const updateNotes = this.notes.map(item => {
                 if(item.id === id){
