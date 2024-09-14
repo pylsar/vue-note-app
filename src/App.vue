@@ -16,7 +16,6 @@
 
 <style scoped>
 
-
 /* .list-view{
   width: 30%;
   background: orange;

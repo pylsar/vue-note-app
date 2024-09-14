@@ -1,12 +1,34 @@
 <script setup>
 import {ref} from 'vue';
+import {useNoteStore} from '@/stores/NoteStore';
 import contenteditable from 'vue-contenteditable';
+import {v4 as uuidv4} from 'uuid';
 
 const title = ref('');
 const content = ref('');
 
+const noteStore = useNoteStore();
+
 const handleForm = (e) => {
-    console.log(e)
+    let insertId = noteStore.lastNoteId;
+
+    if(0 < title.value.length && '' === insertId){
+        insertId = uuidv4();
+
+        let newObj = {
+            id: insertId,
+            title: title.value,
+            comment: content.value,
+            timestamp: Date.now(),
+            pinned: false
+
+        }
+
+        noteStore.addNote(newObj);
+
+        title.value = '';
+        content.value = '';
+    }
 }
 </script>
 

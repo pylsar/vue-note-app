@@ -9,7 +9,8 @@ export const useNoteStore = defineStore('noteStore', {
             {id:3, title: 'note three', comment: 'comment 3', timestamp: Date.now(), pinned: false},
             {id:4, title: 'note four', comment: 'comment 4', timestamp: Date.now(), pinned: true},
             {id:5, title: 'note fifve', comment: 'comment 5', timestamp: Date.now(), pinned: false}
-        ]
+        ],
+        lastNoteId: '',
     }),
     getters:{
         allNotes: (state) =>{
@@ -20,6 +21,10 @@ export const useNoteStore = defineStore('noteStore', {
         }
     },
     actions: {
+        addNote(note){
+            const newNoteArr = [note, ...this.notes];
+            this.notes = newNoteArr;
+        },
         markedAsPinned(id){
             const updateNotes = this.notes.map(item => {
                 if(item.id === id){
